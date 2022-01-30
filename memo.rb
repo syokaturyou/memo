@@ -6,29 +6,29 @@ if memo_type == 1
    puts "拡張子を除いたファイル名を入力してください"
    filename = gets.to_s
    
-   if File.exist?(filename + '.csv')
+   if File.exist?("#{filename.strip}.csv")
     puts '既に同名ファイルが存在します。'
    else
     puts "メモしたい内容を記入してください"
     puts "完了したら Ctrl + D を押します"
     naiyo = STDIN.read
-    File.write(filename + '.csv',naiyo)
+    File.write("#{filename.strip}.csv", naiyo)
    end
 
 elsif memo_type == 2
    puts "拡張子を除いたファイル名を入力してください"
    filename = gets.to_s
    
-   if File.exist?(filename + '.csv')
+   if File.exist?("#{filename.strip}.csv")
      puts "csvファイルの現内容を表示"
      puts "----------------------"
-     f = File.open(filename + '.csv')
+     f = File.open("#{filename.strip}.csv")
      puts "#{f.read}"
      puts "----------------------"
      puts "更新内容を記入してください"
      puts "完了したら Ctrl + D を押します"
      naiyo = STDIN.read
-     File.write(filename + ".csv",naiyo)
+     File.write("#{filename.strip}.csv", naiyo)
    else
      puts '該当ファイルは存在しません。'
    end
