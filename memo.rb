@@ -12,7 +12,7 @@ if memo_type == 1
     puts "メモしたい内容を記入してください"
     puts "完了したら Ctrl + D を押します"
     naiyo = STDIN.read
-    File.write(filename + ".csv",naiyo)
+    File.write(filename + '.csv',naiyo)
    end
 
 elsif memo_type == 2
@@ -22,7 +22,7 @@ elsif memo_type == 2
    if File.exist?(filename + '.csv')
      puts "csvファイルの現内容を表示"
      puts "----------------------"
-     f = File.open(filename + ".csv")
+     f = File.open(filename + '.csv')
      puts "#{f.read}"
      puts "----------------------"
      puts "更新内容を記入してください"
